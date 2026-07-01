@@ -1,0 +1,6 @@
+model Equipe{
+    id String @id @default(uuid())
+    nome String
+    carros Carro[]
+    pilotos Piloto[]
+}

@@ -1,0 +1,8 @@
+model Carro{
+    id String @id @default(uuid())
+    nome String
+    modelo String
+
+    equipe Equipe? @relation(fields: [equipeId], references: [id])
+    equipeId String
+}

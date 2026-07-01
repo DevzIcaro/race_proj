@@ -1,0 +1,6 @@
+model Pessoa{
+    id String @id @default(uuid())
+    email String
+    senha String
+    nome String
+}

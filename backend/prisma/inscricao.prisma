@@ -1,0 +1,12 @@
+model Inscricao{
+    id String @id @default(uuid())
+    num_inscricao Int
+    desc_inscricao String
+
+    pilotos Piloto? @relation(fields: [pilotoId], references: [id])
+    pilotoId String
+
+    carro Carro? @relation(fields: [pilotoId], references: [id])
+    carroId String
+
+}
