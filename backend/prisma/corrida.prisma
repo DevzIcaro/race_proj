@@ -1,10 +1,7 @@
 model Corrida{
     id String @id @default(uuid())
     nome_grand_prix String
-
-    pista Pista? @relation(fields: [pistaId], references: [id])
-    pistaId String
-
-    inscricoes Inscricao? @relation(fields: [inscId], references: [id])
-    inscId String
+    pista Pista[]
+    inscricoes Inscricao[] 
 }
+   

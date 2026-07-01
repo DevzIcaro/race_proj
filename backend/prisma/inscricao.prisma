@@ -3,10 +3,12 @@ model Inscricao{
     num_inscricao Int
     desc_inscricao String
 
-    pilotos Piloto? @relation(fields: [pilotoId], references: [id])
+    pilotos Piloto @relation(fields: [pilotoId], references: [id])
     pilotoId String
 
-    carro Carro? @relation(fields: [pilotoId], references: [id])
+    carro Carro @relation(fields: [carroId], references: [id])
     carroId String
 
+    corrida Corrida @relation(fields: [corridaId], references:[id])
+    corridaId String
 }

@@ -3,6 +3,6 @@ model Piloto {
     nome  String
     idade Int
 
-    equipe   Equipe? @relation(fields: [equipeId], references: [id])
-    equipeId String?
+    equipe   Equipe @relation(fields: [equipeId], references: [id])
+    equipeId String
 }

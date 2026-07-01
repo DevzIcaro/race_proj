@@ -3,6 +3,7 @@ model Carro{
     nome String
     modelo String
 
-    equipe Equipe? @relation(fields: [equipeId], references: [id])
+    equipe Equipe @relation(fields: [equipeId], references: [id])
     equipeId String
+    inscricao Inscricao[]
 }

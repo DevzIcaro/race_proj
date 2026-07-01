@@ -1,4 +1,7 @@
 model Pista{
     id String @id @default(uuid())
     nome String
+
+    corrida Corrida @relation(fields:[corridaId], references:[id])
+    corridaId String 
 }
