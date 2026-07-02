@@ -2,7 +2,9 @@ model Piloto {
     id    String @id @default(uuid())
     nome  String
     idade Int
+    inscricoes Inscricao[]
 
     equipe   Equipe @relation(fields: [equipeId], references: [id])
     equipeId String
+    
 }
