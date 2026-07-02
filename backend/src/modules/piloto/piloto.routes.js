@@ -1,0 +1,1 @@
+// Define os endpoints, e chama os comntrollers.  Ou seja aqui estão as rotas e suas lógicas de negócio.

@@ -1,0 +1,1 @@
+// Aqui ficam as lógicas aplicadas a esta pasta (Equivalente a use-cases)
