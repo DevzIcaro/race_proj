@@ -25,4 +25,4 @@ function remove(id){
     return prisma.piloto.remove({where: {id}});
 }
 
-module.export = {list, getById, create, update, remove}
+module.export = {list, getById, create, update, remove};
