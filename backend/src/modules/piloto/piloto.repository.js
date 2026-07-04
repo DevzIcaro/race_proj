@@ -18,7 +18,7 @@ function create(data){
 }
 
 function update(id, data){
-    return prisma.piloto.upadte({where: {id}, data});
+    return prisma.piloto.update({where: {id}, data});
 }
 
 function remove(id){

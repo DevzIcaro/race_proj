@@ -8,12 +8,12 @@ async function list(req, res) {
 async function getById(req, res) {
   const { id } = req.params;
   const piloto = await pilotoService.getById(id);
-  res.json(piloto);
+  res.status(201).json(piloto);
 }
 
 async function create(req, res) {
   const pilotoCreate = await pilotoService.create(req.body);
-  res.status(201).json(pilotoCreate);
+  res.json(pilotoCreate);
 }
 
 async function update(req, res) {

@@ -31,5 +31,4 @@ async function remove(id) {
   return pilotoRepository.remove(id);
 }
 
-
 module.exports = {list, getById, create, update, remove} 
