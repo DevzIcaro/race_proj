@@ -1,10 +1,10 @@
 const inscricoesRepository = require("./inscricoes.repository")
 
-function list(){
+async function list(){
     return inscricoesRepository.list();
 }
 
-function getById(id){
+async function getById(id){
     const inscricao = inscricoesRepository.findById(id);
     if(!inscricao){
         const error = new Error("Inscrição não foi encontrada");
@@ -15,16 +15,16 @@ function getById(id){
     return inscricao;
 }
 
-function create(data){
+async function create(data){
     return inscricoesRepository.create(data);
 }
 
-function update(id, data){
+async function update(id, data){
   await getById(id);
     return inscricoesRepository.create(id, data);
 }
 
-function remove(id){
+async function remove(id){
     await getById(id);
     return inscricoesRepository.remove(id);
 }

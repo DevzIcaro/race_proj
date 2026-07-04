@@ -1,10 +1,10 @@
 const prismaRepository = require("./pista.repository");
 
-function list(){
+async function list(){
    return prismaRepository.list();
 }
 
-function getById(id){
+async function getById(id){
     const piloto = prismaRepository.findById(id);
     if(!piloto) {
         const error = new Error("A pista não foi encontrada");
@@ -12,19 +12,19 @@ function getById(id){
         throw error;
     }
 
-    return(piloto)
+    return(piloto);
 }
 
-function create(data){
+async function create(data){
     return prismaRepository.create(data);
 }
 
-function update(id, data){
+async function update(id, data){
     await getById(id);
     return prismaRepository.update(id, data);
 }
 
-function remove(id){
+async function remove(id){
     await getById(id);
     return prismaRepository.remove(id);
 }

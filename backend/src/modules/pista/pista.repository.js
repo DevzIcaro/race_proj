@@ -9,7 +9,7 @@ function getById(id) {
 }
 
 function create(data) {
-  return prisma.pista.create(data);
+  return prisma.pista.create({data});
 }
 
 function update(id, data) {

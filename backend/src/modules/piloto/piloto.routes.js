@@ -6,10 +6,9 @@ const pilotoController = require("./piloto.controller");
 const router = Router();
 
 router.get('/pilotos', pilotoController.list);
-router.get('/pilotos/:id', pilotoController.getById);
+router.get('/piloto/:id', pilotoController.getById);
 router.post('/pilotos', pilotoController.create);
 router.put('/pilotos/:id', pilotoController.update);
 router.delete('/pilotos/:id', pilotoController.remove);
-
 
 module.exports = router

@@ -6,7 +6,7 @@ const router = Router
 router.get('/pista', pistaController.list);
 router.get('/pista/:id', pistaController.getById);
 router.post('/pista', pistaController.create);
-router.put('/piloto/:id', pistaController.update);
-router.delete('/piloto/:id', pistaController.remove);
+router.put('/pista/:id', pistaController.update);
+router.delete('/pista/:id', pistaController.remove);
 
 module.exports = router
