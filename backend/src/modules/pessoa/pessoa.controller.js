@@ -12,8 +12,8 @@ async function getById(req, res) {
 }
 
 async function create(req, res) {
-  const pessosCreate = await pessoaService.create(req.body);
-  res.status(201).json(pessosCreate);
+  const pessoaCreate = await pessoaService.create(req.body);
+  res.status(201).json(pessoaCreate);
 }
 
 async function update(req, res) {
@@ -25,7 +25,7 @@ async function update(req, res) {
 async function remove(req, res) {
   const { id } = req.params;
   await pessoaService.remove(id);
-  res.status(204).send( );
+  res.status(204).send();
 }
 
 module.exports = { list, getById, create, update, remove };

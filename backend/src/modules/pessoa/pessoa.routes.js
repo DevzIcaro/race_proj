@@ -10,4 +10,4 @@ res.post("/pessoas", pessoaController.create);
 res.put("/pessoas/:id", pessoaController.update);
 res.delete("/pessoas:id", pessoaController.remove);
 
-module.exports = router
+module.exports = router;

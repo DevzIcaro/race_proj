@@ -11,4 +11,4 @@ router.post('/pilotos', pilotoController.create);
 router.put('/pilotos/:id', pilotoController.update);
 router.delete('/pilotos/:id', pilotoController.remove);
 
-module.exports = router
+module.exports = router;
