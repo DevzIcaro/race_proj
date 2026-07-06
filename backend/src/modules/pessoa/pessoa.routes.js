@@ -4,10 +4,10 @@ const pessoaController = require("./pessoa.controller")
 
 const router = Router();
 
-res.get("/pessoas", pessoaController.list);
-res.get("/pessoa/:id", pessoaController.getById);
-res.post("/pessoas", pessoaController.create);
-res.put("/pessoas/:id", pessoaController.update);
-res.delete("/pessoas:id", pessoaController.remove);
+router.get("/pessoas", pessoaController.list);
+router.get("/pessoas/:id", pessoaController.getById);
+router.post("/pessoas", pessoaController.create);
+router.put("/pessoas/:id", pessoaController.update);
+router.delete("/pessoas/:id", pessoaController.remove);
 
 module.exports = router;

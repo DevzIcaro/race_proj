@@ -1,7 +1,5 @@
 const prisma = require("../../shared/prisma")
 
-const prisma = {PrismaClient}
-
 function list(){
     return prisma.pessoa.findMany();
 }
@@ -19,7 +17,7 @@ function update(id, data){
 }
 
 function remove(id){
-    return prisma.pessoa.remove({where:{id}});
+    return prisma.pessoa.delete({where:{id}});
 }
 
 module.exports = {list, getById, create, update, remove};

@@ -1,11 +1,11 @@
 const carroRepository = require("../../shared/prisma");
 
 function list() {
-  return prisma.carro.list();
+  return prisma.carro.finMany();
 }
 
 function getById(id) {
-  return prisma.carro.getById({ where: { id } });
+  return prisma.carro.findUnique({ where: { id } });
 }
 
 function create(data) {
