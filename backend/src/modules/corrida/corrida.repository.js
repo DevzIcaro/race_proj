@@ -17,7 +17,7 @@ function update(id, data){
 }
 
 function remove(id){
-    return prisma.corrida.remove({where:{id}});
+    return prisma.corrida.delete({where:{id}});
 }
 
 module.exports = {list, getById, create, update, remove}

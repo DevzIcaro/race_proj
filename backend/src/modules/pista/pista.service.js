@@ -5,14 +5,17 @@ async function list(){
 }
 
 async function getById(id){
-    const piloto = prismaRepository.findById(id);
-    if(!piloto) {
+    // [corrigido] faltava "await" -- sem ele, a variável seria a Promise em si
+    // (sempre truthy), e o "if" de 404 nunca disparava. Também renomeei de
+    // "piloto" pra "pista" -- era resto de copiar/colar de outro módulo.
+    const pista = await prismaRepository.getById(id);
+    if(!pista) {
         const error = new Error("A pista não foi encontrada");
         error.status = 404;
         throw error;
     }
 
-    return(piloto);
+    return(pista);
 }
 
 async function create(data){

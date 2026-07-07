@@ -5,7 +5,9 @@ async function list(){
 }
 
 async function getById(id){
-    const equipe =  equipeRepository.findById(id);
+    // [corrigido] faltava "await" -- sem ele, "equipe" seria a Promise em si
+    // (sempre truthy), e o "if (!equipe)" nunca dispararia.
+    const equipe =  await equipeRepository.getById(id);
     if(!equipe){
         const error = new Error("A equipe não foi encontrada");
         error.status = 404;

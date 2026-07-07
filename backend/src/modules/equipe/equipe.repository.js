@@ -17,7 +17,7 @@ function update(id, data) {
 }
 
 function remove(id) {
-  return prisma.equipe.remove({ where: { id } });
+  return prisma.equipe.delete({ where: { id } });
 }
 
 module.exports = { list, getById, create, update, remove };

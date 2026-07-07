@@ -13,6 +13,9 @@ async function getById(req, res){
 
 async function create(req, res){
     const inscricoesCreate = await inscricoesService.create(req.body);
+    // [corrigido] estava "inscricaoCreate" (sem o "s") na linha de baixo --
+    // nome diferente da variável declarada acima ("inscricoesCreate"),
+    // ReferenceError: inscricaoCreate is not defined.
     res.status(201).json(inscricoesCreate);
 }
 

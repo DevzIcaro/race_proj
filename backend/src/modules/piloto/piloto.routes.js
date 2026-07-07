@@ -6,7 +6,9 @@ const pilotoController = require("./piloto.controller");
 const router = Router();
 
 router.get('/pilotos', pilotoController.list);
-router.get('/piloto/:id', pilotoController.getById);
+// [corrigido] era "/piloto/:id" (singular) -- inconsistente com as outras
+// rotas desse arquivo (list, put, delete), que usam "/pilotos" (plural).
+router.get('/pilotos/:id', pilotoController.getById);
 router.post('/pilotos', pilotoController.create);
 router.put('/pilotos/:id', pilotoController.update);
 router.delete('/pilotos/:id', pilotoController.remove);

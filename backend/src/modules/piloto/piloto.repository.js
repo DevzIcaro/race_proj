@@ -22,7 +22,10 @@ function update(id, data){
 }
 
 function remove(id){
-    return prisma.piloto.remove({where: {id}});
+    return prisma.piloto.delete({where: {id}});
 }
 
-module.export = {list, getById, create, update, remove};
+// [corrigido] era "module.export" (sem o "s") -- isso não sobrescreve o
+// export padrão do Node, então o service recebia um objeto vazio {} e
+// qualquer método (create, update, etc.) virava undefined.
+module.exports = {list, getById, create, update, remove};

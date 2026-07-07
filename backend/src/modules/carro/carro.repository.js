@@ -1,7 +1,7 @@
-const carroRepository = require("../../shared/prisma");
+const prisma = require("../../shared/prisma");
 
 function list() {
-  return prisma.carro.finMany();
+  return prisma.carro.findMany();
 }
 
 function getById(id) {
@@ -17,7 +17,7 @@ function update(id, data) {
 }
 
 function remove(id) {
-  return prisma.carro.remove({ where: { id } });
+  return prisma.carro.delete({ where: { id } });
 }
 
 module.exports = { list, getById, create, update, remove };

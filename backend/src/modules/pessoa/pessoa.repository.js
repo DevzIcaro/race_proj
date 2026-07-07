@@ -1,3 +1,6 @@
+// [corrigido] existia uma segunda linha logo abaixo, "const prisma = {PrismaClient}",
+// que redeclarava "prisma" (SyntaxError: Identifier 'prisma' has already been
+// declared). Era sobra de uma tentativa antiga de importar direto aqui; removida.
 const prisma = require("../../shared/prisma")
 
 function list(){
