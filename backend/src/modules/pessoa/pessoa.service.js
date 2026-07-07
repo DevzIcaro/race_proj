@@ -5,11 +5,11 @@ async function list(){
 }
 
 async function getById(id){
-    const pessoa = pessoaRepository.findById(id);
+    const pessoa = await pessoaRepository.getById(id);
     if(!pessoa){
         const error = new Error ("Pessoa não encontrada.");
         error.status = 404;
-        throw Error;
+        throw error;
     };
 
     return pessoa;
@@ -26,7 +26,7 @@ async function update(id, data){
 
 async function remove(id){
     await getById(id);
-    return pessoaRepository.remove()
+    return pessoaRepository.remove(id)
 }
 
 module.exports = {list, getById, create, update, remove}

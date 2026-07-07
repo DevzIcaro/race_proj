@@ -5,7 +5,7 @@ async function list() {
 }
 
 async function getById(id) {
-  const carro = carroRepository.findById(id);
+  const carro = carroRepository.getById(id);
   if (!carro) {
     const error = new Error("Carro não é encontrado");
     error.status = 404;
