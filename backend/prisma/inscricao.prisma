@@ -1,7 +1,7 @@
 model Inscricao{
     id String @id @default(uuid())
     num_inscricao Int
-    desc_inscricao String
+    desc_inscricao String?
 
     piloto Piloto @relation(fields: [pilotoId], references: [id])
     pilotoId String
