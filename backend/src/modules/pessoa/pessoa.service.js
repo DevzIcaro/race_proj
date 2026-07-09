@@ -1,4 +1,5 @@
 const pessoaRepository = require("./pessoa.repository");
+const bcrypt = require("bcrypt")
 
 async function list(){
     return pessoaRepository.list();
@@ -16,6 +17,8 @@ async function getById(id){
 }
 
 async function create(data){
+    const passhash = await bcrypt.hash(data.senha, 10);
+    data.senha = passhash;
     return pessoaRepository.create(data);
 }
 
