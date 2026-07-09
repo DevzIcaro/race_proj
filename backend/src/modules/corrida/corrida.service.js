@@ -5,7 +5,7 @@ async function list(){
 }
 
 async function getById(id){
-    const corrida = corridaService.getById(id);
+    const corrida = await corridaService.getById(id);
     if(!corrida){
         const error = new Error("Corrida não encontrada");
         error.status = 404;
