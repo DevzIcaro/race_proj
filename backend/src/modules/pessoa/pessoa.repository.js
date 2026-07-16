@@ -1,26 +1,27 @@
-// [corrigido] existia uma segunda linha logo abaixo, "const prisma = {PrismaClient}",
-// que redeclarava "prisma" (SyntaxError: Identifier 'prisma' has already been
-// declared). Era sobra de uma tentativa antiga de importar direto aqui; removida.
-const prisma = require("../../shared/prisma")
+const prisma = require("../../shared/prisma");
 
-function list(){
-    return prisma.pessoa.findMany();
+function list() {
+  return prisma.pessoa.findMany();
 }
 
-function getById(id){
-    return prisma.pessoa.findUnique({where:{id}});
+function getById(id) {
+  return prisma.pessoa.findUnique({ where: { id } });
 }
 
-function create(data){
-    return prisma.pessoa.create({data});
+function getByEmail(email) {
+  return prisma.pessoa.findUnique({ email });
 }
 
-function update(id, data){
-    return prisma.pessoa.update({where:{id}, data});
+function create(data) {
+  return prisma.pessoa.create({ data });
 }
 
-function remove(id){
-    return prisma.pessoa.delete({where:{id}});
+function update(id, data) {
+  return prisma.pessoa.update({ where: { id }, data });
 }
 
-module.exports = {list, getById, create, update, remove};
+function remove(id) {
+  return prisma.pessoa.delete({ where: { id } });
+}
+
+module.exports = { list, getById, getByEmail, create, update, remove };
