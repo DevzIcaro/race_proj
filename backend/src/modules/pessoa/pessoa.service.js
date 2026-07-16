@@ -20,7 +20,7 @@ async function getByEmail(email) {
   const pessoaEmail = await pessoaRepository.getByEmail(email);
   if (!pessoaEmail) {
       const error = new Error("credenciais inválidas.");
-      error.status = 404;
+      error.status = 401;
       throw error;
     }
 

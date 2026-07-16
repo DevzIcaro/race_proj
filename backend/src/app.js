@@ -8,6 +8,7 @@ const corridaRoutes = require('./modules/corrida/corrida.routes');
 const inscricoesRoutes = require('./modules/inscricoes/inscricoes.routes');
 const pistaRoutes = require('./modules/pista/pista.routes');
 const equipeRoutes = require('./modules/equipe/equipe.routes');
+const authRoutes = require('./modules/auth/auth.routes');
 
 
 const app = express();
@@ -15,6 +16,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use(authRoutes);
 app.use(pilotoRoutes);
 app.use(pessoaRoutes);
 app.use(carroRoutes);

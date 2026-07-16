@@ -9,7 +9,7 @@ function getById(id) {
 }
 
 function getByEmail(email) {
-  return prisma.pessoa.findUnique({ email });
+  return prisma.pessoa.findUnique({ where: { email } });
 }
 
 function create(data) {
