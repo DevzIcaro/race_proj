@@ -1,5 +1,8 @@
 const pessoaService = require("../pessoa/pessoa.service");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
+const jwtSecret = process.env.JWT_SECRET;
 
 async function login(email, senha) {
   const pessoaAuth = await pessoaService.getByEmail(email);
@@ -11,7 +14,13 @@ async function login(email, senha) {
     throw error;
   }
 
-  return pessoaAuth;
+
+  const token = jwt.sign({id: pessoaAuth.id}, jwtSecret, {expiresIn: "3h"});
+  console.log(token);
+
+  const loginJWT = {token, pessoaAuth};
+
+  return loginJWT;
 }
 
 

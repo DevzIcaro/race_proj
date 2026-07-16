@@ -2,6 +2,7 @@ const authService = require("./auth.service");
 
 async function login(req, res) {
   const { email, senha} = req.body;
+
   const login = await authService.login(email, senha);
 
   const { id, nome } = login;
